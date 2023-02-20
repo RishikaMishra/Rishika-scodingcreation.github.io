@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Contact Us page</title>
+    <meta charset ="UTF-8">
+</head>
+<style>
+    h1{
+        color: darkred;
+        text-align: center;
+        background-color: lightgrey;
+        font-size: 44px;
+        margin: 30px;
+        padding: 10px;
+    }
+    form{
+        text-align: center;
+        background-color: lightgrey;
+        margin: 20px;
+        padding: 20px;
+        font-size: 30px;
+    }
+    #information{
+      background-color: lightgrey; 
+      width: 300px;
+      height: 600px;
+      border: 10px solid darkred;
+      padding: 50px;
+      margin: 20px;
+      text-align: left;
+      font-size: 30px;
+      margin-left: 118px; 
+    }
+
+    #feedback{
+      background-color: lightgrey; 
+      width: 500px;
+      height: 600px;
+      border: 10px solid darkred; 
+      padding: 50px;
+      margin: 20px;
+      text-align: center;
+      font-size: 30px;
+      right: 50px;
+      margin-left: 618px;
+      margin-top: -740px;  
+    }
+    h2{
+        font-size: 40px;
+        color:darkred;
+       text-align: center; 
+    }
+    h3{
+       font-size: 30px;
+        margin: 20px;
+        padding: 20px;  
+        margin-left: 10px;
+    }
+    button{
+        height:40px ;
+        width: 90px;
+        font-size: 20px;
+    }
+    textarea{
+    margin-right: 180px;   
+    }
+</style>
+<body>
+    <div>
+        <b><h1>Contact Us</h1></b>
+    </div>
+    <div id="information">
+        <h2>Get In Touch!</h2>
+        <h3>Name: Rishika Mishra </h3>
+        <h3>E-mail: rishika045@gmail.com</h3>
+        <h3>MobileNo.: 6395892111 </h3>
+    </div> 
+    <div id="feedback">
+        <h2>Please share your Feedback!</h2>
+    <form method="post" autocomplete="off" name="submit-to-google-sheet">
+    <b>
+        <p>First name
+        &nbsp; &nbsp;<input type="text" name="First name" placeholder="Enter First name"></p>
+        <p>Last name
+        &nbsp; &nbsp;<input type="text" name="lastname" placeholder="Enter lastname"></p>
+        <p>Email
+        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<input type="text" name="Email" placeholder="Enter Email"></p>
+        <p>Mobile No. 
+        &nbsp; &nbsp;<input type="number" name="Phone no." placeholder="Enter Mobile No."></p>
+        <p>Share your Feedback
+        &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<textarea name="Message" rows="2" placeholder="Enter Message">
+        </textarea></p>
+        <br>
+        <button onclick="Myfunction()" type="Submit">Submit</button>
+    </b>
+    </form>
+    </div>
+    <script>
+        function Myfunction(){
+            alert("The form has been submitted!");
+        }
+    </script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwf6TRIvZrWZDoARur7wHS298rRSs-UZCvyCvjltu3EHpIzaC44ynAJtFx4GLIIRmDJXg/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</form>
+</body>
+</html>
