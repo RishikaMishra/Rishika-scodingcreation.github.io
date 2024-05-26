@@ -1,2 +1,5 @@
 # www.rishika-scodingcreation.in
-I am creating this educational website.
+This educational website aims to provide resources, tutorials, and learning materials for various programming languages. Whether you’re a beginner or an experienced developer, this platform will help you enhance your coding skills.
+
+# Technologies used:
+HTML, CSS, javascript
