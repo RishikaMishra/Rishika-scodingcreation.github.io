@@ -3,3 +3,6 @@ This educational website aims to provide resources, tutorials, and learning mate
 
 # Technologies used:
 HTML, CSS, javascript
+
+**#here you can check out this website:**
+https://rishikamishra.github.io/Rishika-scodingcreation.github.io/
